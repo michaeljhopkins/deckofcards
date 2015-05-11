@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', function(){
+    return \Response::json(['message' => 'true']);
+});
 
 Route::post('tables','TablesController@store');
 
