@@ -24,8 +24,7 @@ use Illuminate\Database\Eloquent\Model;
 class Table extends Model {
 
     protected $guarded = ['id'];
-
-    protected $hidden = ['id'];
+    protected $hidden = ['id','updated_at','created_at'];
 
     public function user()
     {
