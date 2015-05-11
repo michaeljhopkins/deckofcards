@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Deckofcards
+        psr4_prefix: Deckofcards
+        src_path: app
