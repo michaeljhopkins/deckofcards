@@ -17,6 +17,6 @@ Route::get('/', function(){
 
 Route::post('tables','TablesController@store');
 
-Route::resource('tables.cards','CardsController',['only' => ['store']]);
-Route::get('tables/{tableId}/pull','CardsController@pull');
-Route::get('tables/{tableId}/deal','CardsController@deal');
+Route::resource('tables.cards','CardsController',['only' => ['index']]);
+Route::post('tables/{tableId}/cards/pull','CardsController@pull');
+Route::post('tables/{tableId}/cards/deal','CardsController@deal');
