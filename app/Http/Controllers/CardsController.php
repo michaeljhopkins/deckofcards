@@ -33,7 +33,7 @@ class CardsController extends Controller {
     {
         /** @var \Illuminate\Database\Eloquent\Collection $cards */
         $table = Table::with(['cards'])->whereUniqueId($tableId)->first();
-        $card = $table->cards->where('dealt',0)->random();
+        $card = $table->cards->where('dealt',false)->random();
         $deck = Deck::whereCardId($card->id)->whereTableId($table->id)->first();
         $deck->update(['dealt' => true]);
         $return = new Collection(['value' => $card->value,'suite' => $card->suite,'img' => URL::to($card->img),'deck_num' => $card->deck_num,'dealt' => 1]);
